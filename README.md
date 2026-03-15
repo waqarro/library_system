@@ -40,28 +40,11 @@ You can get the project in one of these ways.
 Run this command in your terminal:
 
 ```bash
-git clone <your-repository-link>
+git clone https://github.com/waqarro/library_system.git
 ```
 
-Then move into the project folder:
+Then just open it in the VS code
 
-```bash
-cd library_system
-```
-
-## How to Run the Project
-
-From the project folder, run:
-
-```bash
-python3 main.py
-```
-
-If `python3` does not work on your computer, try:
-
-```bash
-python main.py
-```
 
 ## Example Usage
 
@@ -75,21 +58,6 @@ When the program starts, it will ask for your name and show a menu:
 4. Exit
 ```
 
-## Notes
-
-- No extra libraries need to be installed.
-- This project uses only basic Python files.
-- Make sure all project files stay in the same folder structure.
-
-## For Group Members
-
-If you are working on this assignment with your group:
-
-1. Download or clone the project.
-2. Open the project folder in VS Code.
-3. Run `main.py`.
-4. Make your changes and test the program.
 
 ## Author
-
-Made by Waka.
+Made by waka
