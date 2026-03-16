@@ -20,58 +20,71 @@ library.add_book(book1)
 library.add_book(book2)
 library.add_book(book3)
 
-user_name = input("Enter your name: ")
+try:
+    user_name = input("What is your name? ").strip()
+except KeyboardInterrupt:
+    print("\n\nProgram stopped.")
+    raise SystemExit(0)
+
+if not user_name:
+    user_name = "Guest"
+
 user = User(user_name)
 
-print(f"\nWelcome to the library, {user.name}.")
+print(f"\nWelcome, {user.name}.")
 
-while True:
-    print("\n=== Library Menu ===")
-    print("1. Show books")
-    print("2. Borrow a book")
-    print("3. Return a book")
-    print("4. Exit")
+try:
+    while True:
+        print("\n=== Library Menu ===")
+        print("1. Show books")
+        print("2. Borrow a book")
+        print("3. Return a book")
+        print("4. Exit")
 
-    choice = input("Select an option (1-4): ")
+        choice = input("Choose an option (1-4): ").strip()
 
-    if choice == "1":
-        clear_screen()
-        library.show_books()
+        if choice == "1":
+            clear_screen()
+            library.show_books()
 
-    elif choice == "2":
-        clear_screen()
-        library.show_books()
+        elif choice == "2":
+            clear_screen()
+            library.show_books()
 
-        try:
-            index = int(input("\nEnter the book number to borrow: ")) - 1
+            try:
+                index = int(input("\nEnter the book number to borrow: ")) - 1
 
-            if index < 0 or index >= len(library.books):
-                print("\nThat book number is not valid.")
-            else:
-                user.borrow_book(library.books[index])
+                if index < 0 or index >= len(library.books):
+                    print("\nThat is not a valid book number.")
+                else:
+                    user.borrow_book(library.books[index])
+                    library.show_books()
 
-        except ValueError:
-            print("\nPlease enter a number only.")
+            except ValueError:
+                print("\nPlease enter numbers only.")
 
-    elif choice == "3":
-        clear_screen()
-        library.show_books()
+        elif choice == "3":
+            clear_screen()
+            library.show_books()
 
-        try:
-            index = int(input("\nEnter the book number to return: ")) - 1
+            try:
+                index = int(input("\nEnter the book number to return: ")) - 1
 
-            if index < 0 or index >= len(library.books):
-                print("\nThat book number is not valid.")
-            else:
-                user.return_book(library.books[index])
+                if index < 0 or index >= len(library.books):
+                    print("\nThat is not a valid book number.")
+                else:
+                    user.return_book(library.books[index])
+                    library.show_books()
 
-        except ValueError:
-            print("\nPlease enter a number only.")
+            except ValueError:
+                print("\nPlease enter numbers only.")
 
-    elif choice == "4":
-        clear_screen()
-        print("\nThanks for using the library system.")
-        break
+        elif choice == "4":
+            clear_screen()
+            print("\nThanks for using the library.")
+            break
 
-    else:
-        print("\nInvalid option. Please choose a number from 1 to 4.")
+        else:
+            print("\nInvalid option. Please choose a number between 1 and 4.")
+except KeyboardInterrupt:
+    print("\n\nProgram stopped.")

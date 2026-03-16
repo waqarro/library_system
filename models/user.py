@@ -6,14 +6,15 @@ class User:
     def borrow_book(self, book):
         if book.borrow():
             self.borrowed_books.append(book)
-            print(f"\nYou borrowed '{book.get_title()}'.")
+            borrow_time = book.get_borrow_time().strftime("%d/%m/%Y %I:%M %p")
+            print(f"\nYou borrowed \"{book.get_title()}\" at {borrow_time}.")
         else:
-            print("\nThat book is currently not available.")
+            print("\nSorry, that book is not available right now.")
 
     def return_book(self, book):
         if book in self.borrowed_books:
             book.return_book()
             self.borrowed_books.remove(book)
-            print(f"\nYou returned '{book.get_title()}'.")
+            print(f"\nYou returned \"{book.get_title()}\".")
         else:
-            print("\nYou did not borrow that book.")
+            print("\nYou have not borrowed that book.")

@@ -1,54 +1,77 @@
 # Library System
 
-This is a simple Python library system project made by Waka for a group assignment. It allows a user to:
+This is a small Python library system made by Waka. It was built for a group assignment.
 
-- view available books
+The program lets a user:
+
+- see the list of books
 - borrow a book
 - return a book
+-
 
 ## Project Files
 
 - `main.py` - runs the program
-- `models/book.py` - book class
-- `models/user.py` - user class
-- `services/library.py` - library logic
+- `models/book.py` - stores book details
+- `models/user.py` - handles user actions
+- `services/library.py` - manages the book list
 
-## Requirements
+## What You Need
 
-- Python 3 installed on your computer
+- Python 3
 
-To check if Python is installed, run:
+You can check it with:
 
 ```bash
 python3 --version
 ```
 
-## How to Download the Project
+## How to Download
 
-You can get the project in one of these ways.
+### Option 1: Download ZIP
 
-### Option 1: Download ZIP from GitHub
-
-1. Open the project repository in GitHub.
+1. Open the project on GitHub.
 2. Click `Code`.
 3. Click `Download ZIP`.
 4. Extract the ZIP file.
-5. Open the extracted folder in VS Code or your terminal.
+5. Open the project folder in VS Code or in the terminal.
 
 ### Option 2: Clone with Git
 
-Run this command in your terminal:
-
 ```bash
 git clone https://github.com/waqarro/library_system.git
+cd library_system
 ```
 
-Then just open it in the VS code
+## How to Run
 
+From inside the project folder, run:
 
-## Example Usage
+```bash
+python3 main.py
+```
 
-When the program starts, it will ask for your name and show a menu:
+If `python3` does not work, try:
+
+```bash
+python main.py
+```
+
+## Optional: Install Tabulate
+
+This project  works with `tabulate`, please install it before running:
+
+```bash
+pip3 install tabulate
+```
+
+If `pip3` does not work, try:
+
+```bash
+python3 -m pip install tabulate
+```
+
+## Example Menu
 
 ```text
 === Library Menu ===
@@ -58,6 +81,6 @@ When the program starts, it will ask for your name and show a menu:
 4. Exit
 ```
 
-
 ## Author
-Made by waka
+
+Made by Waka.
