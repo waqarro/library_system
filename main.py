@@ -1,13 +1,25 @@
 import os
-from models.book import Book
-from models.user import User
-from services.library import Library
-
+import sys
+import subprocess
 
 def clear_screen():
     command = "cls" if os.name == "nt" else "clear"
     if os.name == "nt" or os.getenv("TERM"):
         os.system(command)
+
+try:
+    from tabulate import tabulate
+except ImportError:
+    print("Installing required package: tabulate...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "tabulate"])
+    from tabulate import tabulate
+    clear_screen()
+
+import os
+from models.book import Book
+from models.user import User
+from services.library import Library
+
 
 
 library = Library()

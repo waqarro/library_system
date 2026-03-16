@@ -1,13 +1,12 @@
 # Library System
 
-This is a small Python library system made by Waka. It was built for a group assignment.
+This is a small Python library system made by Waka. I built it for a group assignment.
 
 The program lets a user:
 
 - see the list of books
 - borrow a book
 - return a book
--
 
 ## Project Files
 
@@ -57,30 +56,33 @@ If `python3` does not work, try:
 python main.py
 ```
 
-## Optional: Install Tabulate
+## Requirements
 
-This project  works with `tabulate`, please install it before running:
+This program uses a third-party Python module called **tabulate** to display the list of books in a table format.
+
+The program will automatically try to install the required module when it starts.
+
+However, if the automatic installation fails, please install the module manually using:
 
 ```bash
 pip3 install tabulate
 ```
 
-If `pip3` does not work, try:
+If `pip3` does not work, you can try:
 
 ```bash
 python3 -m pip install tabulate
 ```
 
-## Example Menu
+## Running the Program
 
-```text
-=== Library Menu ===
-1. Show books
-2. Borrow a book
-3. Return a book
-4. Exit
+After installing the required module, run the program with:
+
+```bash
+python3 main.py
 ```
 
 ## Author
 
 Made by Waka.
+[itswaka.com](https://itswaka.com)
