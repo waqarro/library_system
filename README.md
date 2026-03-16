@@ -1,6 +1,6 @@
 # Library System
 
-This is a small Python library system made by Waka. I built it for a group assignment.
+This is a small Python library system made by Waka. Built it for a group assignment.
 
 The program lets a user:
 
