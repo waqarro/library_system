@@ -7,11 +7,24 @@ def clear_screen():
     if os.name == "nt" or os.getenv("TERM"):
         os.system(command)
 
+def install_package(package):
+    print(f"Installing required package: {package}...")
+    try:
+        # First try normal install
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    except subprocess.CalledProcessError:
+        try:
+            
+            subprocess.check_call([sys.executable, "-m", "pip", "install", package, "--break-system-packages", "--user"])
+        except subprocess.CalledProcessError:
+            print(f"\nError: Could not install {package} automatically.")
+            print(f"Please try manually: {sys.executable} -m pip install {package} --break-system-packages")
+            sys.exit(1)
+
 try:
     from tabulate import tabulate
 except ImportError:
-    print("Installing required package: tabulate...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "tabulate"])
+    install_package("tabulate")
     from tabulate import tabulate
     clear_screen()
 
@@ -92,7 +105,6 @@ try:
                 print("\nPlease enter numbers only.")
 
         elif choice == "4":
-            clear_screen()
             print("\nThanks for using the library.")
             break
 
